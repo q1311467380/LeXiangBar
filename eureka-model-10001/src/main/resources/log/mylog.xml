@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--            每个属性都以%开头  [] 和 - ：这些都是普通符号没有特殊作用     -->
+            <!--      %logger 输出该条日志信息的对象的类的全限定类名 %msg是日志的内容信息      -->
+            <pattern>%highlight(%d{YYYY-MM-dd HH:mm:ss.SSS}) %green([%thread]) %level %logger - %cyan(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <!--    自定义属性标签 name声明key  value声明值  后续需要使用时 可以使用 得到value-->
+<!--    <property name="abc" value="file"/>-->
+    <!-- 日志文件输出 -->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--        服务端读写的日志文件，如果超过指定大小该文件把超过的部分切到其它文件（自定义）上去-->
+        <file>C:/Users/86157/Desktop/springboot.log</file>
+        <!--  如果文件超过指定大小就      切分成指定大小的滚动类型的（可下拉）日志文件-->
+        <!--        rollingPolicy：滚动政策-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--            日志文件下载位置-->
+            <fileNamePattern>C:/Users/86157/Desktop/springboot.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <!--            1mb是log文件的标准，如果是其他类型就会有不一样   不对劲啊这切分- 不是很准确-->
+            <maxFileSize>3MB</maxFileSize>
+            <totalSizeCap>6MB</totalSizeCap>
+        </rollingPolicy>
+        <!--        设置日志文件接收指定等级的日志信息-->
+        <!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+        <!--            <level>ERROR</level>-->
+        <!--            <onMatch>ACCEPT</onMatch>-->
+        <!--            <onMismatch>DENY</onMismatch>-->
+        <!--        </filter>-->
+        <!--        打包成日志文件的信息的格式-->
+        <encoder>
+            <pattern>%d{YYYY-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+
+    </appender>
+    <!--root：定义根日志，包含属性level和appender-ref子级标签。level指定显示日志的级别，appender-ref指定使用的appender。-->
+    <root level="info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+</configuration>
+        <!--
+            上述配置中，定义了两个appender，一个是控制台输出，另一个是日志文件输出。
+            可以根据需要修改日志输出的格式、文件名、文件大小等参数
+        -->

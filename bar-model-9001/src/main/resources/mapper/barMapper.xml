@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.barmodel9001.mapper.BarMapper">
+
+    <insert id="createNewBar">
+        INSERT INTO t_bar(id,bar_name,kind_name,user_id,description) VALUES(NULL,#{barName},#{kindName},#{userId},#{description})
+    </insert>
+    <select id="selectBarByBarName" resultType="com.kang.beanmodel.bean.Bar">
+        SELECT * FROM t_bar WHERE bar_name = #{param};
+    </select>
+    <select id="getRecentlyCreateById" resultType="com.kang.beanmodel.bean.Bar">
+        SELECT bar_name,description FROM t_bar WHERE id = #{param}
+    </select>
+</mapper>

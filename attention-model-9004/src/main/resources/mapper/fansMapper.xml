@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.attentionmodel9004.mapper.FansMapper">
+
+    <insert id="insertNewFans">
+        INSERT INTO t_fans(id,attention_time,bar_name,username) VALUES(NULL,#{attentionTime},#{barName},#{username})
+    </insert>
+    <delete id="deleteAttentionByUsernameAndBarName">
+        DELETE  FROM t_fans WHERE username = #{param1} AND bar_name = #{param2}
+    </delete>
+    <select id="selectBarNameByUsername" resultType="java.lang.String">
+        SELECT bar_name FROM t_fans WHERE username = #{param}
+    </select>
+
+</mapper>

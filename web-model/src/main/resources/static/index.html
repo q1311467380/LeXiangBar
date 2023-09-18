@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/login.js"></script>
+    <meta charset="UTF-8">
+<!--贴吧首页标签名和标签图标
+"iocn":用于定义图标的样式和位置
+”stylesheet“:用于定义页面的样式和位置-->
+    <link rel="icon" href="picture/logo/tag1.png" type="image/png">
+    <link rel="stylesheet" href="css/homePage.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/md5.js"></script>
+    <title>贴吧首页</title>
+</head>
+<body>
+
+<header>
+    <h1>贴吧首页</h1>
+</header>
+<!--首页菜单部分-->
+<!--nav是定义导航的标签，导航栏-->
+<nav>
+    <ul>
+        <li><a href="http://localhost:9100" id="homepage">首页</a></li>
+        <li><a href="javascript:void(0);" id="login">登录</a></li>
+        <li><a href="signUp.html" id="signUp">注册</a></li>
+    </ul>
+</nav>
+
+<!--页面的核心内容区域-->
+<main id="bodyContent">
+    <div class="post">
+        <div>
+            <a href="javascript:void(0);" id="bar1">吧名</a>
+        </div>
+        <a href="javascript:void(0);" id="postName1">帖子标题</a>
+        <div class="post-content" id="post-content1">
+            <p id="content1">帖子内容.....</p>
+        </div>
+    </div>
+    <div class="post">
+        <div>
+            <a href="javascript:void(0);" id="bar2">吧名</a>
+        </div>
+        <a href="javascript:void(0);" id="postName2">帖子标题</a>
+        <div class="post-content" id="post-content2">
+            <p id="content2">帖子内容.....</p>
+        </div>
+    </div>
+    <div class="post">
+        <div>
+            <a href="javascript:void(0);" id="bar3">吧名</a>
+        </div>
+        <a href="javascript:void(0);" id="postName3">帖子标题</a>
+        <div class="post-content" id="post-content3">
+            <p id="content3">帖子内容.....</p>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>版权信息</p>
+</footer>
+
+<!--<h1>弹窗登录</h1>-->
+<!--<button id="loginBtn">登录</button>-->
+
+<!-- 模态框 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h2>登录</h2>
+        <form id="loginForm">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">密码:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="button" value="登录" id="btn">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

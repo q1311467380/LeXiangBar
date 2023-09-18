@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="picture/logo/tag1.png" type="image/png">
+    <meta charset="UTF-8">
+    <title>创建新的贴吧</title>
+    <link rel="stylesheet" href="css/createBar.css"/>
+    <script src="js/createBar.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>创建新的贴吧</h1>
+    <form method="post" id="crate-bar-form">
+        <div class="form-group" >
+            <label for="title">标题</label>
+            <input type="text" id="title" name="title" placeholder="请输入标题">
+        </div>
+        <div class="form-group">
+            <label for="description">描述</label>
+            <input type="text" id="description" name="description" placeholder="请输入描述"/>
+        </div>
+        <div class="form-group">
+            <label for="user_id">用户ID</label>
+            <input type="text" id="user_id" name="user_id" placeholder="请输入您的id"/>
+        </div>
+<!--        <div class="form-group">-->
+<!--            <label for="kindName">贴吧类别</label>-->
+<!--            <input type="text" id="kindName" name="kindName" placeholder="请输入该贴吧的类型"/>-->
+<!--        </div>-->
+        <div class="form-group">
+            <select class="container" id="kindName">
+                <option class="myOptions" value="1">高校</option>
+                <option class="myOptions" value="2">生活</option>
+                <option class="myOptions" value="3">游戏</option>
+                <option class="myOptions" value="4">小说</option>
+                <option class="myOptions" value="5">动漫</option>
+                <option class="myOptions" value="6">娱乐明星</option>
+                <option class="myOptions" value="7">体育</option>
+                <option class="myOptions" value="8">闲趣</option>
+            </select>
+        </div>
+
+<!--        <input id="createNewBar" class="form-button" type="submit" value="创建"/>-->
+<!--        <button id="createNewBar" class="form-button" type="submit" >创建</button>-->
+        <input type="button" id="createNewBar" class="form-button"  value="创建">
+    </form>
+
+</div>
+</body>
+</html>

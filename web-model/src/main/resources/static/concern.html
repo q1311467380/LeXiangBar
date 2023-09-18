@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="picture/logo/tag1.png" type="image/png">
+    <title>我的关注</title>
+    <script src="js/concern.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .postbar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .postbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .postbar .info {
+            flex-grow: 1;
+        }
+
+        .postbar .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .postbar .description {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>我的关注</h1>
+
+    <div class="postbar">
+        <img src="https://example.com/bar1.png" alt="贴吧1">
+        <div class="info">
+            <a class="title" href="#">贴吧1</a>
+            <div class="description">描述1</div>
+        </div>
+    </div>
+
+    <div class="postbar">
+        <img src="https://example.com/bar2.png" alt="贴吧2">
+        <div class="info">
+            <a class="title" href="#">贴吧2</a>
+            <div class="description">描述2</div>
+        </div>
+    </div>
+
+    <div class="postbar">
+        <img src="https://example.com/bar3.png" alt="贴吧3">
+        <div class="info">
+            <a class="title" href="#">贴吧3</a>
+            <div class="description">描述3</div>
+        </div>
+    </div>
+</div>
+<h2>我创建的帖吧：</h2>
+
+<div class="postbar my-postbar">
+    <img src="https://example.com/mybar1.png" alt="我创建的贴吧1">
+    <div class="info">
+        <a class="title" href="#">我创建的贴吧1</a>
+        <div class="description">描述1</div>
+    </div>
+</div>
+
+<div class="postbar my-postbar">
+    <img src="https://example.com/mybar2.png" alt="我创建的贴吧2">
+    <div class="info">
+        <a class="title" href="#">我创建的贴吧2</a>
+<!--        <div class="title">我创建的贴吧2</div>-->
+        <div class="description">描述2</div>
+    </div>
+</div>
+</div>
+</body>
+</html>

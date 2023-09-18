@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="picture/logo/tag1.png" type="image/png">
+    <title>欢迎注册</title>
+    <link rel="stylesheet" href="css/signUpBg.css" />
+    <script src="js/signUp.js"></script>
+    <script src="js/md5.js"></script>
+
+</head>
+<style>
+    body{
+        background: url(picture/logo/signUpBackground_2.png) top left;
+        background-size: 100%;
+    }
+</style>
+<body>
+<!--<script src="js/signUp.js"></script>-->
+<div id="div-title">
+    <h3>欢迎注册</h3>
+</div>
+<div id="form-border">
+    <form method="post" id="signUpForm">
+        <div id="img-control">
+            <img src="picture/logo/signUpBackground.png" id="register-img"/>
+        </div>
+        <label class="form-label" for="username">账&nbsp;号</label>
+        <input id="username" class="form-input" type="text" placeholder="账号" required="required"/><br>
+        <label class="form-label" for="password">密&nbsp;码</label>
+        <input id="password" class="form-input" type="password" placeholder="密码" required="required"/><br>
+        <input id="signUp" class="form-button" type="button" value="注册"/>
+    </form>
+</div>
+</body>
+</html>

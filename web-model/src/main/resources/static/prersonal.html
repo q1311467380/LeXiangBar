@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 基础信息 -->
+    <meta charset="utf-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="个人主页">
+    <meta name="keywords" content="个人主页">
+    <meta name="author" content="kang">
+    <title>个人主页</title>
+    <!-- jQuery -->
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" type="text/css"
+          href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/personal/style.css">
+    <link rel="stylesheet" type="text/css" href="css/personal/mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/personal/font.css">
+    <link rel="stylesheet" type="text/css" href="css/personal/loading.css">
+    <link rel="stylesheet" type="text/css" href="css/personal/animation.css">
+    <link rel="stylesheet" type="text/css" href="css/personal/cursor.css">
+    <link rel="icon" href="picture/personalImg/icon/favicon.ico">
+    <link rel="icon" href="picture/logo/tag1.png" type="image/png">
+    <!-- Izitoast IziToast 是一个轻量级的 JavaScript 库 用来显示消息的-->
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/css/iziToast.min.css">
+    <script type="text/javascript"
+            src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/izitoast/1.4.0/js/iziToast.min.js">
+    </script>
+</head>
+<body>
+<section id="section" class="section"></section>
+    <!-- 背景图片 -->
+    <div class="bg-all">
+        <img id="bg" onerror="this.classList.add('error');"/>
+        <!--        <img id="bg" onerror="this.classList.add('error');" src="picture/personalImg/background1.webp" alt="背景图">-->
+        <div class="cover"></div>
+    </div>
+    <!--主体内容-->
+    <main id="main" class="main">
+        <div class="container" id="container">
+            <div class="row" id="row">
+                <div class="col left">
+                    <!--基本信息-->
+                    <div class="main-left">
+                        <!--Logo-->
+                        <div class="main-img">
+                            <img src="picture/personalImg/icon/logo.png" alt="img">
+                            <div class="img-title">
+                                <span class="img-title">itzhiyin</span>
+                                <span class="img-text">.cn</span>
+                            </div>
+                        </div>
+                        <!--介绍信息-->
+                        <div class="message cards" id="switchmore">
+                            <div class="des" id="des"><i class="iconfont icon-yinhao-copy-copy"></i>
+                                <div class="des-title"><span id="change">Hello&nbsp;World&nbsp;!</span><br/><span
+                                        id="change1">一个建立于 21 世纪的小站，贴吧论坛</span></div>
+                                <i class="iconfont icon-yinhao-copy"></i>
+                            </div>
+                        </div>
+                        <!--社交链接-->
+                        <div class="social" id="social">
+                            <a href="#" class="link" id="github" target="_blank">
+                                <i class="iconfont icon-github"></i>
+                            </a>
+                            <a href="http://wpa.qq.com/msgrd?v=3&uin=3402674724&site=qq&menu=yes" class="link"
+                               id="qq" target="_blank">
+                                <i class="iconfont icon-QQ"></i>
+                            </a>
+                            <a href="mailto:3402674724@qq.com" class="link" id="email">
+                                <i class="iconfont icon-youxiang"></i>
+                            </a>
+                            <a href="https://www.itzhiyin.cn" class="link" id="telegram" target="_blank">
+                                <i class="iconfont icon-telegram"></i>
+                            </a>
+                            <a href="https://www.itzhiyin.cn" class="link" id="twitter" target="_blank">
+                                <i class="iconfont icon-twitter"></i>
+                            </a>
+                            <a id="link-text">通过这里联系我</a>
+                        </div>
+                    </div>
+                </div>
+                <!--第二屏 Logo-->
+                <div class="logo cards" style="display: none" id="changemore">
+                    <a class="logo-text">www.itzhiyin.cn</a>
+                </div>
+                <div class="col right">
+                    <div class="main-right">
+                        <!--功能区-->
+                        <div class="row rightone" id="rightone">
+                            <div class="col hitokotos">
+                                <!--一言-->
+                                <div class="hitokoto cards" id="hitokoto">
+
+                                    <div class="col times">
+                                        <!--时间-->
+                                        <div class="time cards">
+                                            <div class="timeshow" id="time">
+                                                2000&nbsp;年&nbsp;0&nbsp;月&nbsp;00&nbsp;日&nbsp;<span
+                                                    class="weekday">星期一</span><br><span
+                                                    class="time-text">00:00:00</span>
+                                            </div>
+                                            <div class="weather">
+                                                <span id="city_text">天气</span>&nbsp;
+                                                <span id="wea_text">加载失败</span>&nbsp;
+                                                <span id="tem_night"></span>°C~
+                                                <span id="tem_day"></span>°C
+                                                <!-- <span id="win_text"></span>
+                                                <span id="win_speed"></span> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--分隔线-->
+                                <div class="line">
+                                    <i class="iconfont icon-link"></i>
+                                    <span class="line-text">网站列表</span>
+                                </div>
+                                <!--网站链接-->
+                                <div class="link">
+                                    <!--第一组-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="myInfo.html" target="_blank">
+                                                <div class="link-card cards">
+                                                    <i class="iconfont icon-blog-solid"></i>
+                                                    <span class="link-name">我的信息</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col 2">
+                                            <a href="preference.html" target="_blank">
+                                                <div class="link-card cards">
+                                                    <i class="iconfont icon-cloud"></i>
+                                                    <span class="link-name">我的偏好</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="https://jq.qq.com/?_wv=1027&k=5TJU1YTq" target="_blank">
+                                                <div class="link-card cards">
+                                                    <i class="iconfont icon-music-list"></i>
+                                                    <span class="link-name">收藏</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!--第二组-->
+                                    <div class="row" style="margin-top: 1.5rem;">
+                                        <div class="col">
+                                            <a href="concern.html" target="_blank">
+                                                <div class="link-card cards">
+                                                    <i class="iconfont icon-a-daohangzhiyindingwei-05"></i>
+                                                    <span class="link-name">关注和创建的吧</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col 2">
+                                            <a href="myPost.html" target="_blank">
+                                                <div class="link-card cards">
+                                                    <i class="iconfont icon-z_shangpinheji"></i>
+                                                    <span class="link-name">评论过的帖子</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="createBar.html" target="_blank">
+                                                <div class="link-card cards">
+                                                    <i class="iconfont icon-lab"></i>
+                                                    <span class="link-name">创建贴吧</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute ;z-index: 999;top: 0;left: 0">
+        <a href="afterLogin.html" id="homepage">首页</a>
+    </div>
+    </main>
+
+    <!--禁用js时提示-->
+    <noscript>
+        <div class="noscript fixed-top">请开启 JavaScript</div>
+    </noscript>
+    <!-- JS -->
+    <script type="text/javascript" src="js/personalJs/main.js"></script>
+    <script type="text/javascript" src="js/personalJs/time.js"></script>
+    <script type="text/javascript" src="js/personalJs/js.cookie.js"></script>
+    <script type="text/javascript" src="js/personalJs/set.js"></script>
+
+    <script type="text/javascript"
+            src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.0/js/bootstrap.min.js">
+    </script>
+</body>
+</html>

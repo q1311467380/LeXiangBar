@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.postmodel9002.mapper.PostMapper">
+
+    <insert id="insertNewPost" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+<!--        上下两种方式都可以，不过直接从对象拿比较好，不然可能返回的是插入的结果-->
+<!--        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">-->
+<!--            select LAST_INSERT_ID()-->
+<!--        </selectKey>-->
+        INSERT INTO t_post(id,username,bar_name,content,file_path,post_name,create_time) VALUES(NULL,#{username},#{barName},#{content},#{filePath},#{postName},#{createTime})
+    </insert>
+    <select id="selectPostByName" resultType="com.kang.beanmodel.bean.Post">
+<!--        如果出错观察一下post_name这样写会不会有问题-没问题，其它地方有过了-->
+        SELECT * FROM t_post WHERE post_name = #{param}
+    </select>
+<!--    返回id值最大的3行（如果有的话），也就是最进发布的三行-->
+    <select id="getRecentlyPostByUsername" resultType="com.kang.beanmodel.bean.Post">
+        SELECT * FROM t_post
+        ORDER BY id DESC
+        LIMIT 3 OFFSET 0
+    </select>
+    <select id="getPostByUsernameAndPostName" resultType="com.kang.beanmodel.bean.Post">
+        SELECT * FROM t_post WHERE username = #{param1} AND post_name = #{param2}
+    </select>
+    <select id="selectPostNameByUsername" resultType="java.lang.String">
+        SELECT post_name FROM t_post WHERE username = #{param}
+    </select>
+</mapper>

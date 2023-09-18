@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kang.commentmodel9003.mapper.CommentMapper">
+    <insert id="insertComment">
+        INSERT INTO t_comment(id,content,post_name,username,comment_time) VALUES(NULL,#{content},#{postName},#{username},#{commentTime})
+    </insert>
+
+    <select id="getAllCommentByPostName" resultType="com.kang.beanmodel.bean.Comment">
+        SELECT * FROM t_comment WHERE post_name = #{param}
+    </select>
+    <select id="getBarNameByPostName" resultType="java.lang.String">
+        SELECT bar_name FROM t_post WHERE post_name = #{param}
+    </select>
+</mapper>

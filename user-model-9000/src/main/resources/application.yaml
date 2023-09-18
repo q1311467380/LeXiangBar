@@ -1,0 +1,38 @@
+server:
+  port: 9000
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/postbar_db?useSSL=false&characterEncoding=utf8
+      username: root
+      password: kang
+      driver-class-name: com.mysql.jdbc.Driver
+  #      eureka
+  application:
+    name: user-server
+
+
+eureka:
+  instance:
+    hostname: localhost
+    status-page-url: http://localhost:10001/actuator
+
+  client:
+    registerWithEureka: true # 是否将自己注册到 Eureka 注册中心
+    fetchRegistry: true # 是否获取Eureka注册中心中的所有服务
+    serviceUrl:
+      # 设置Eureka Server的服务URL
+      defaultZone: http://localhost:10001/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

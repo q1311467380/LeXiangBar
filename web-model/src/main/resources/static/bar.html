@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--贴吧首页标签名和标签图标-->
+    <link rel="icon" href="picture/logo/tag1.png" type="image/png">
+    <title id="barName">动态改变（吧名）</title>
+    <link rel="stylesheet" href="css/bar.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.css"/>-->
+
+    <!--引入JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+    <script src="js/bar.js"></script>
+</head>
+<body>
+<header>
+    <h1 id="barName2">动态改变（吧名）</h1>
+    <input value="关注" type="button" id="attention">
+</header>
+
+<nav>
+    <!-- 导航链接 -->
+    <a href="barType.html">主题分类</a>
+    <a href="#">热门帖子</a>
+    <a href="#">最新帖子</a>
+    <a href="#">精华帖子</a>
+</nav>
+
+<main id="body">
+<!--    热门推荐-->
+<!--    <div class="sidebar">-->
+<!--        &lt;!&ndash; 侧边栏内容 &ndash;&gt;-->
+<!--        <h2>热门标签</h2>-->
+<!--        <ul>-->
+<!--            <li>标签1</li>-->
+<!--            <li>标签2</li>-->
+<!--            <li>标签3</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+
+<!--        &lt;!&ndash; 帖子列表 &ndash;&gt;-->
+<!--        <div class="post">-->
+<!--            <h2 class="post-title">帖子标题</h2>-->
+<!--            <p class="post-info">作者 • 发布时间 • 回复数</p>-->
+<!--            <div class="post-content">-->
+<!--                帖子内容...-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <!-- 发布新帖子表单 -->
+    <div>
+        <div class="new-post-form">
+            <h3>发布新帖子</h3>
+
+            <!--采用同步请求把数据发到服务端再携带数据跳转到帖子的页面-->
+            <form  method="post" id="publish-form" enctype="multipart/form-data">
+                <div class="form-field">
+                    <label for="post-title">标题</label>
+                    <input type="text" id="post-title" name="title">
+                </div>
+                <div class="form-field">
+                    <label for="post-content">内容</label>
+                    <textarea  id="post-content" name="content"></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="post-content">附件</label>
+                    <input type="file" id="uploadFile" name="uploadFile">
+                </div>
+<!--                    <input type="submit" id="publish" value="发布">-->
+                    <input type="button" value="发布" id="publish"/>
+            </form>
+        </div>
+    </div>
+        <br>
+</main>
+
+<footer>
+    <p>页面导航链接 • 版权信息</p>
+</footer>
+</body>
+</html>

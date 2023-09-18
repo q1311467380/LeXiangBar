@@ -1,0 +1,139 @@
+/* 贴吧首页CSS 样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+li {
+    margin-right: 20px;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+li a:hover {
+    color: #ff7f50;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.post h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.post p {
+    margin: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+}
+
+.modal h2 {
+    margin-top: 0;
+}
+
+.modal input[type="text"],
+.modal input[type="password"],
+.modal input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+/* 样式用于模态框
+      登录弹窗样式*/
+/* 背景*/
+.modal {
+    display: none; /* 初始状态下隐藏模态框 */
+    position: fixed;/*绝对位置，跟旁边广告似的*/
+    z-index: 9999;/*位于最上层*/
+    /*初始点位置*/
+    top: 0;
+    left: 0;
+    /*占页面比*/
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+}
+/*登录弹窗的框*/
+.modal-content {
+    position: absolute;/*绝对定位，背景是其父元素*/
+    /*相对父元素（背景）的占比*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);/*调整大小*/
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+img {
+    width: 200px;
+    height: 100px;
+}
